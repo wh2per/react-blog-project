@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import palette from '../../lib/styles/palette';
 
 const buttonStyle = css`
@@ -47,10 +47,10 @@ const StyledLink = styled(Link)`
 
 const Button = props => {
   return props.to ? (
-    <StyledLink {...props} cyan={props.cyan ? 1 : 0} />
-  ) : (
+    <StyledLink {...props} cyan={props.cyan ? 1:0} />
+  ):(
     <StyledButton {...props} />
   );
 };
 
-export default Button;
+export default withRouter(Button);
